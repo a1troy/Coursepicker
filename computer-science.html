@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science Program</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CourseCompare</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Universities</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="program-info">
+            <h1>Computer Science Degree</h1>
+            <p>A comprehensive program that covers the fundamentals of computer science, including programming, algorithms, data structures, and more.</p>
+            
+            <h2>Usual/Necessary Course Selections</h2>
+            <ul>
+                <li>Introduction to Programming</li>
+                <li>Data Structures and Algorithms</li>
+                <li>Database Systems</li>
+                <li>Operating Systems</li>
+                <li>Software Engineering</li>
+                <li>Computer Networks</li>
+                <li>Artificial Intelligence</li>
+            </ul>
+
+            <h2>Subject Difficulty</h2>
+            <input type="range" min="1" max="10" value="5" class="slider" id="subjectDifficulty">
+            <p>Difficulty: <span id="difficultyValue">5</span></p>
+        </section>
+
+        <section class="top-universities">
+            <h2>Top Ranked Universities Teaching This Program</h2>
+            <div class="universities-grid">
+                <div class="university-card">
+                    <h3>MIT</h3>
+                    <input type="range" min="1" max="10" value="9" class="slider" id="mitRating">
+                    <p>Rating: <span id="mitValue">9</span></p>
+                </div>
+                <div class="university-card">
+                    <h3>Stanford University</h3>
+                    <input type="range" min="1" max="10" value="8" class="slider" id="stanfordRating">
+                    <p>Rating: <span id="stanfordValue">8</span></p>
+                </div>
+                <div class="university-card">
+                    <h3>University of Cambridge</h3>
+                    <input type="range" min="1" max="10" value="8" class="slider" id="cambridgeRating">
+                    <p>Rating: <span id="cambridgeValue">8</span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="sticky-footer">
+        <p>Student Age yo: <span id="ageValue">18</span></p>
+        <input type="range" min="15" max="30" value="18" class="slider" id="ageSlider">
+    </footer>
+
+    <script>
+        // JavaScript to update the slider values
+        const subjectDifficulty = document.getElementById('subjectDifficulty');
+        const difficultyValue = document.getElementById('difficultyValue');
+        subjectDifficulty.oninput = function() {
+            difficultyValue.innerHTML = this.value;
+        }
+
+        const mitRating = document.getElementById('mitRating');
+        const mitValue = document.getElementById('mitValue');
+        mitRating.oninput = function() {
+            mitValue.innerHTML = this.value;
+        }
+
+        const stanfordRating = document.getElementById('stanfordRating');
+        const stanfordValue = document.getElementById('stanfordValue');
+        stanfordRating.oninput = function() {
+            stanfordValue.innerHTML = this.value;
+        }
+
+        const cambridgeRating = document.getElementById('cambridgeRating');
+        const cambridgeValue = document.getElementById('cambridgeValue');
+        cambridgeRating.oninput = function() {
+            cambridgeValue.innerHTML = this.value;
+        }
+
+        const ageSlider = document.getElementById('ageSlider');
+        const ageValue = document.getElementById('ageValue');
+        ageSlider.oninput = function() {
+            ageValue.innerHTML = this.value;
+        }
+    </script>
+</body>
+</html>
