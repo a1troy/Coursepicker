@@ -284,6 +284,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 nav .logo {
@@ -296,6 +297,8 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -444,5 +447,25 @@ body::before {
     }
     100% {
         transform: translate(0, 0);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .program-info h1 {
+        font-size: 1.8em;
+    }
+
+    .program-info p, .program-info ul li, .program-info h2, .university-card h3, .gained-skills ul li {
+        font-size: 1em;
+    }
+
+    .universities-grid {
+        grid-template-columns: 1fr;
     }
 }
