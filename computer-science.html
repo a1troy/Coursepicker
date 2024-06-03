@@ -63,15 +63,22 @@
                 </div>
             </div>
         </section>
+
+        <section class="gained-skills">
+            <h2>Gained Skills</h2>
+            <ul id="skillsList">
+                <!-- Skills will be dynamically updated based on the age slider -->
+            </ul>
+        </section>
     </main>
 
     <footer class="sticky-footer">
-        <p>Student Age yo: <span id="ageValue">18</span></p>
+        <p>Student Age: <span id="ageValue">18</span></p>
         <input type="range" min="15" max="30" value="18" class="slider" id="ageSlider">
     </footer>
 
     <script>
-        // JavaScript to update the slider values
+        // JavaScript to update the slider values and gained skills
         const subjectDifficulty = document.getElementById('subjectDifficulty');
         const difficultyValue = document.getElementById('difficultyValue');
         subjectDifficulty.oninput = function() {
@@ -98,9 +105,34 @@
 
         const ageSlider = document.getElementById('ageSlider');
         const ageValue = document.getElementById('ageValue');
+        const skillsList = document.getElementById('skillsList');
+
+        const skillsByAge = {
+            18: ["Discrete Mathematics", "Logic and Proof", "Web Design"],
+            19: ["Data Structures", "Algorithms", "Computer Architecture"],
+            20: ["Operating Systems", "Database Systems", "Networks"],
+            21: ["Software Engineering", "Machine Learning", "Artificial Intelligence"],
+            22: ["Advanced Algorithms", "Distributed Systems", "Security"],
+            // More age and skills mappings can be added here
+        };
+
         ageSlider.oninput = function() {
             ageValue.innerHTML = this.value;
+            updateSkills(this.value);
         }
+
+        function updateSkills(age) {
+            const skills = skillsByAge[age] || [];
+            skillsList.innerHTML = "";
+            skills.forEach(skill => {
+                const li = document.createElement("li");
+                li.textContent = skill;
+                skillsList.appendChild(li);
+            });
+        }
+
+        // Initialize with default age value
+        updateSkills(ageSlider.value);
     </script>
 </body>
 </html>
